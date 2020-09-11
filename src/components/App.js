@@ -10,7 +10,7 @@ import HomePage from "./home/HomePage";
 import PageNotFound from "./PageNotFound";
 import CoursesPage from "./course/CoursesPage";
 import ManageCoursePage from "./course/ManageCoursePage";
-import Header from "./common/Header";
+import Header from "./shared/Header";
 import { theme, GlobalStyle } from "./globalStyles";
 
 import "bootstrap/dist/css/bootstrap.min.css";
