@@ -2,9 +2,11 @@ import { createGlobalStyle } from "styled-components";
 import { device } from "../contrants/deviceSizes";
 
 export const GlobalStyle = createGlobalStyle`
-  *::before,
+  *, *::before,
   *::after {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
   }
   html{
     font-size: 10px;

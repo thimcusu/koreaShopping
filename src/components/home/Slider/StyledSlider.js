@@ -5,7 +5,6 @@ export const HomeSliderContainer = styled.div`
   width: 100%;
   height: 100%;
   padding-top: 70px;
-  padding-bottom: 30px;
   @media ${device.tablet} {
     padding-left: 30px;
     padding-right: 30px;
@@ -19,8 +18,9 @@ export const HomeSliderContainer = styled.div`
     cursor: grab;
     transition: none;
   }
-  .no-animation {
+  .cloned {
     transition: none;
+    animation: none;
   }
 `;
 export const HomeSlider = styled.div`
@@ -38,6 +38,7 @@ export const CarouselSlider = styled.div`
   flex-wrap: nowrap;
   width: 100%;
   height: 100%;
+  transition: smooth;
   transition: all 1.2s ease;
 `;
 
@@ -54,9 +55,17 @@ export const SlideBackground = styled.div`
   background-position: center center;
   width: 100%;
   height: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 `;
 const fade = keyframes`
   0% {
+    opacity: 0;
+  }
+  50% {
     opacity: 0;
   }
   100% {
@@ -78,7 +87,7 @@ export const SlideContentContainer = styled.div`
   }
   .fade {
     opacity: 1;
-    animation: ${fade} linear 2s;
+    animation: ${fade} 2s linear;
   }
 `;
 
@@ -95,6 +104,7 @@ export const SlideContent = styled.div`
     }
     .details {
       margin-top: 15px;
+      margin-bottom: 30px;
       font-weight: 400;
       font-size: 14px;
       line-height: 2.1;

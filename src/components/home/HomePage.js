@@ -1,9 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 import Slider from "./Slider";
+import Adv from "./Adv";
 
 const HomePage = () => {
-  return <Slider />;
+  return (
+    <>
+      <Slider />
+      <Adv />
+    </>
+  );
 };
 
 export default HomePage;
