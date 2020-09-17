@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 import {
   StyledAdv,
@@ -21,7 +22,9 @@ function Adv() {
         <AdvBackGround src={advSmall} />
         <AdvSmallInner>
           <Title>Smart Phones</Title>
-          <Link>See More</Link>
+          <Link>
+            <NavLink to="/category">See More</NavLink>
+          </Link>
         </AdvSmallInner>
       </AdvSmall>
       <AdvLarge>
@@ -33,7 +36,9 @@ function Adv() {
             unde deleniti laboriosam fugiat, vitae, molestiae aspernatur
             eligendi dolorum quam ratione ipsum repellendus
           </Details>
-          <Link>See More</Link>
+          <Link>
+            <NavLink to="/category">See More</NavLink>
+          </Link>
         </AdvLargeInner>
       </AdvLarge>
     </StyledAdv>
