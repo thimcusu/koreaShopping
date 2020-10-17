@@ -11,9 +11,9 @@ export const getCourses = () => {
 };
 
 export const putCourse = course => {
-  const { id, ...data } = course;
+  const { _id, ...data } = course;
   return api({
-    url: `/courses/${id}`,
+    url: `/courses/${_id}`,
     method: "PUT",
     data,
   })

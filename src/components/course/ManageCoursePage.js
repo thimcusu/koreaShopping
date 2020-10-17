@@ -30,7 +30,7 @@ function ManageCoursePage({ match, history }) {
     setCourse(prevCourse => ({
       ...prevCourse,
       slug: name === "title" ? slug(value) : prevCourse.slug,
-      [name]: name === "authorId" ? parseInt(value, 10) : value,
+      [name]: value,
     }));
   }
 
@@ -44,7 +44,7 @@ function ManageCoursePage({ match, history }) {
     event.preventDefault();
     if (!formIsValid()) return;
     setIsLoading(true);
-    if (course.id) {
+    if (course._id) {
       try {
         await dispatch(updateCourse(course));
         setIsLoading(false);

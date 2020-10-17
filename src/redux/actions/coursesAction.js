@@ -42,7 +42,7 @@ export function createCourse(course) {
 export function removeCourse(course) {
   return function (dispatch) {
     dispatch({ type: DELETE_COURSE_OPTIMISTIC, payload: course });
-    return deleteCourse(course.id);
+    return deleteCourse(course._id);
   };
 }
 

@@ -7,7 +7,7 @@ export default function courseReducer(state = [], action) {
     }
     case types.UPDATE_COURSE_SUCCESS: {
       const newCourses = state.map(course => {
-        if (course.id === action.payload.id) return action.payload;
+        if (course._id === action.payload._id) return action.payload;
         return course;
       });
       return newCourses;
@@ -15,7 +15,7 @@ export default function courseReducer(state = [], action) {
     case types.LOAD_COURSES_SUCCESS:
       return action.payload;
     case types.DELETE_COURSE_OPTIMISTIC: {
-      return state.filter(course => course.id !== action.payload.id);
+      return state.filter(course => course._id !== action.payload._id);
     }
     default:
       return state;

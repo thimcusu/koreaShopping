@@ -1,5 +1,5 @@
 export async function handleResponse(response) {
-  return response.data;
+  return response.data.data;
 }
 
 // In a real app, would likely call an error logging service.
@@ -11,7 +11,7 @@ export function handleError(error) {
 
 export function getCourseBySlug(courses = [], slug = "") {
   const newCourse = {
-    id: undefined,
+    _id: undefined,
     title: "",
     authorId: undefined,
     slug: "",

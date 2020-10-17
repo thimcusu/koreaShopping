@@ -13,7 +13,7 @@ const CourseForm = ({
 }) => {
   return (
     <form onSubmit={onSave} className="container">
-      <h2>{course.id ? "Edit" : "Add"} Course</h2>
+      <h2>{course._id ? "Edit" : "Add"} Course</h2>
       {errors.onSave && (
         <div className="alert alert-danger" role="alert">
           {errors.onSave}
@@ -33,7 +33,7 @@ const CourseForm = ({
         value={course.authorId || ""}
         defaultOption="Select Author"
         options={authors.map(author => ({
-          value: author.id,
+          value: author._id,
           text: author.name,
         }))}
         onChange={onChange}

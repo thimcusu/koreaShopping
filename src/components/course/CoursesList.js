@@ -7,7 +7,7 @@ const CoursesList = ({ courses = [], authors = [], onDeleteCourse }) => {
     <table>
       <thead>
         <tr>
-          <th>ID</th>
+          <th>Id</th>
           <th />
           <th>Title</th>
           <th>Author</th>
@@ -17,11 +17,11 @@ const CoursesList = ({ courses = [], authors = [], onDeleteCourse }) => {
       </thead>
       <tbody>
         {courses &&
-          courses.map(course => {
-            const author = authors.find(a => a.id === course.authorId);
+          courses.map((course, index) => {
+            const author = authors.find(a => a._id === course.authorId);
             return (
-              <tr key={course.id}>
-                <td>{course.id}</td>
+              <tr key={course._id}>
+                <td>{index}</td>
                 <td>
                   <a
                     className="btn btn-light"
