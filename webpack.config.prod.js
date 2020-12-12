@@ -2,24 +2,47 @@ const webpack = require("webpack");
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const webpackBundleAnalyzer = require("webpack-bundle-analyzer");
+const WebpackBundleAnalyzer = require("webpack-bundle-analyzer");
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const TerserWebpackPlugin = require('terser-webpack-plugin');
 
 process.env.NODE_ENV = "production";
-
+const ASSET_PATH = process.env.ASSET_PATH || '/';
 module.exports = {
-  mode: "development",
-  target: "web",
-  devtool: "source-map",
-  entry: "./src/index",
+  mode: 'production',
+  devtool: 'source-map',
+  entry: path.join(__dirname, 'src/index.js'),
   output: {
-    path: path.resolve(__dirname, "build"),
-    publicPath: "/",
-    filename: "bundle.js",
+    filename: 'bundle.[name].[contenthash].js',
+    path: path.resolve(__dirname, 'build'),
+    publicPath: ASSET_PATH,
+  },
+  optimization: {
+    splitChunks: { chunks: 'all' },
+    minimize: true,
+    minimizer: [
+      new TerserWebpackPlugin({
+        terserOptions: {
+          mangle: {
+            safari10: true,
+          },
+          output: {
+            comments: false,
+            ascii_only: true,
+            // Turned on because emoji and regex is not minified properly using default
+            // https://github.com/facebook/create-react-app/issues/2488
+          },
+        },
+      }),
+      new OptimizeCssAssetsPlugin(),
+    ],
   },
   plugins: [
-    new webpackBundleAnalyzer.BundleAnalyzerPlugin({ analyzerMode: "static" }),
+    new WebpackBundleAnalyzer.BundleAnalyzerPlugin({ analyzerMode: "static" }),
     new MiniCssExtractPlugin({
-      filename: "[name].[contenthash].css",
+      filename: '[name].[fullhash].css',
+      chunkFilename: '[name].[contenthash:8].chunk.css',
     }),
     new webpack.DefinePlugin({
       "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
@@ -41,7 +64,10 @@ module.exports = {
         minifyCSS: true,
         minifyURLs: true,
       },
+      
     }),
+    new CleanWebpackPlugin(),
+    new WebpackBundleAnalyzer.BundleAnalyzerPlugin({ analyzerMode: 'static' }),
   ],
   module: {
     rules: [
@@ -52,19 +78,29 @@ module.exports = {
       },
       {
         test: /(\.css)$/,
+        use: [ MiniCssExtractPlugin.loader, "css-loader?url=false", "postcss-loader" ],
+      },
+      {
+        test: /\.(svg)$/i,
         use: [
-          MiniCssExtractPlugin.loader,
           {
-            loader: "css-loader",
+            loader: 'url-loader',
             options: {
-              sourceMap: true,
+              outputPath: 'static/assets/',
+              limit: 8192, // 8*1024
+              name: '[name].[contenthash:8].[ext]',
             },
           },
+        ],
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
           {
-            loader: "postcss-loader",
+            loader: 'file-loader',
             options: {
-              plugins: () => [require("cssnano")],
-              sourceMap: true,
+              outputPath: 'static/assets/',
+              name: '[name].[ext]',
             },
           },
         ],
