@@ -26,9 +26,46 @@ export const HomeSliderContainer = styled.div`
 export const HomeSlider = styled.div`
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   color: #fff;
   overflow: hidden;
+  transition: smooth;
+  transition: all 1.2s ease;
+  .slick-dots{
+    position: absolute;
+    display: block;
+    width: auto;
+    list-style: none;
+    text-align: center;
+    padding: 0 1.5rem;
+    bottom: 1.5rem;
+    font-size: 1em;
+    margin-bottom: 0;
+    li.slick-active {
+      color: ${props => props.theme.hover};
+    }
+    li {
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+      font-weight: 600;
+      margin: 0;
+      margin-right: 2px;
+      transition: all 0.2s ease;
+      button{
+        width: 25px;
+        height: 25px; 
+      }
+      button:before{
+        width: 25px;
+        height: 25px;
+        font-size: 8px;
+      }
+    }
+    li:hover {
+      color: ${props => props.theme.hover};
+    }
+  }
 `;
 
 export const CarouselSlider = styled.div`
@@ -45,11 +82,15 @@ export const CarouselSlider = styled.div`
 export const Slide = styled.div`
   position: relative;
   width: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 `;
 
 export const SlideBackground = styled.div`
   position: absolute;
-  background-image: url(${props => props.src});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;

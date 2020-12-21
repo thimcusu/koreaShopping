@@ -11,6 +11,7 @@ import PageNotFound from "./PageNotFound";
 import CoursesPage from "./course/CoursesPage";
 import ManageCoursePage from "./course/ManageCoursePage";
 import Header from "./shared/Header";
+import Footer from "./shared/Footer";
 import { theme, GlobalStyle } from "./globalStyles";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -35,6 +36,7 @@ const App = () => {
             <Route path="/course" component={ManageCoursePage}></Route>
             <Route component={PageNotFound}></Route>
           </Switch>
+          <Footer />
           <ToastContainer autoClose={3000} hideProgressBar />
         </Router>
       </ThemeProvider>

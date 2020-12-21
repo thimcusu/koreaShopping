@@ -5,10 +5,10 @@ import Adv from "./Adv";
 
 const HomePage = () => {
   return (
-    <>
+    <div class="container">
       <Slider />
       <Adv />
-    </>
+    </div>
   );
 };
 

@@ -17,11 +17,6 @@ const contentImages = [
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus minima fugiat illo et cum! Rerum ut excepturi eaque. Autem, non laboriosam esse perspiciatis culpa ducimus distinctio? Dolore neque natus assumenda",
   },
   {
-    title: "Iphone, IPad Korea",
-    details:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus minima fugiat illo et cum! Rerum ut excepturi eaque. Autem, non laboriosam esse perspiciatis culpa ducimus distinctio? Dolore neque natus assumenda",
-  },
-  {
     title: "Amazing",
     details:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus minima fugiat illo et cum! Rerum ut excepturi eaque. Autem, non laboriosam esse perspiciatis culpa ducimus distinctio? Dolore neque natus assumenda",
