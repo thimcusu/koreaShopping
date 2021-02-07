@@ -81,26 +81,17 @@ module.exports = {
         use: [ MiniCssExtractPlugin.loader, "css-loader?url=false", "postcss-loader" ],
       },
       {
-        test: /\.(svg)$/i,
+        test: /\.svg$/,
+        use: ['@svgr/webpack', 'url-loader'],
+      },
+      {
+        test: /\.(png|jpg|gif)$/i,
         use: [
           {
             loader: 'url-loader',
             options: {
-              outputPath: 'static/assets/',
               limit: 8192, // 8*1024
-              name: '[name].[contenthash:8].[ext]',
-            },
-          },
-        ],
-      },
-      {
-        test: /\.(png|jpg|gif)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              outputPath: 'static/assets/',
-              name: '[name].[ext]',
+              name: 'static/assets/[name].[hash:8].[ext]',
             },
           },
         ],

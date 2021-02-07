@@ -1,9 +1,9 @@
-import * as types from "./actionTypes";
+import { BEGIN_API_CALL, API_CALL_ERROR } from "../../constants/actionType";
 
 export function beginApiCall() {
-  return { type: types.BEGIN_API_CALL };
+  return { type: BEGIN_API_CALL };
 }
 
 export function apiCallError(err) {
-  return { type: types.API_CALL_ERROR, payload: err };
+  return { type: API_CALL_ERROR, payload: err };
 }

@@ -12,8 +12,8 @@ import {
   Link,
   AdvBackGround,
 } from "./StyledAdv";
-import advSmall from "../../../images/avds_small.jpg";
-import advLarge from "../../../images/avds_large.jpg";
+import advSmall from "../../../assets/images/avds_small.jpg";
+import advLarge from "../../../assets/images/avds_large.jpg";
 
 function Adv() {
   return (

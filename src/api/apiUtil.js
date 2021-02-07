@@ -1,5 +1,5 @@
 export async function handleResponse(response) {
-  return response.data.data;
+  return response.data;
 }
 
 // In a real app, would likely call an error logging service.

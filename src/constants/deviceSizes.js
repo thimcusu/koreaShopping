@@ -1,0 +1,46 @@
+const size = {
+  mobileS: '20em',
+  mobileM: '23.44em',
+  mobileL: '36em',
+  tablet: '48em',
+  laptop: '64em',
+  laptopL: '90em',
+  desktop: '120em',
+};
+export const DEVICE_FIXED_SIZE = {
+  mobileS: 20 * 16,
+  mobileM: 23.44 * 16,
+  mobileL: 36 * 16,
+  tablet: 48 * 16,
+  laptop: 64 * 16,
+  laptopL: 90 * 16,
+  desktop: 120 * 16,
+};
+export const device = {
+  mobileS: `(min-width: ${size.mobileS})`,
+  mobileM: `(min-width: ${size.mobileM})`,
+  mobileL: `(min-width: ${size.mobileL})`,
+  tablet: `(min-width: ${size.tablet})`,
+  laptop: `(min-width: ${size.laptop})`,
+  laptopL: `(min-width: ${size.laptopL})`,
+  desktop: `(min-width: ${size.desktop})`,
+  desktopL: `(min-width: ${size.desktop})`,
+  //   mobileS: `(min-width: calc(${size.mobileS} + 1px))`,
+  //   mobileM: `(min-width: calc(${size.mobileM} + 1px))`,
+  //   mobileL: `(min-width: calc(${size.mobileL} + 1px))`,
+  //   tablet: `(min-width: calc(${size.tablet}) + 1px))`,
+  //   laptop: `(min-width: calc(${size.laptop} + 1px))`,
+  //   laptopL: `(min-width: calc(${size.laptopL} + 1px))`,
+  //   desktop: `(min-width: calc(${size.desktop} + 1px))`,
+  //   desktopL: `(min-width: calc(${size.desktop} + 1px))`,
+  // down to smaller device
+  downMobileS: `(max-width: ${size.mobileS})`,
+  downMobileM: `(max-width: ${size.mobileM})`,
+  downMobileL: `(max-width: ${size.mobileL})`,
+  downTablet: `(max-width: ${size.tablet})`,
+  downLaptop: `(max-width: ${size.laptop})`,
+  downLaptopL: `(max-width: ${size.laptopL})`,
+  downDesktop: `(max-width: ${size.desktop})`,
+  downDesktopL: `(max-width: ${size.desktop})`,
+};
+export default size;

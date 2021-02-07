@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { device } from "../../../contrants/deviceSizes";
+import { device } from "../../../constants/deviceSizes";
 
 export const StyledAdv = styled.div`
   padding-top: 0;

@@ -1,11 +1,16 @@
 {
+  "prettier.singleQuote": true,
+  "prettier.semi": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  },
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
   },
   "prettier.arrowParens": "avoid",
-  "eslint.codeAction.showDocumentation": {
-    "enable": true
-  },
   "plugins": [
     // ...
     "react-hooks"
