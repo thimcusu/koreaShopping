@@ -12,13 +12,11 @@ import {
 import Button from '../common/Button';
 import Avatar from '../../common/Avatar';
 import HeaderMobile from './HeaderMobile';
+import DropdownLocales from './DropdownLocales';
 import { ReactComponent as AppIcon } from '../../../assets/images/fi-rr-apps.svg';
 import { ReactComponent as SearchIcon } from '../../../assets/images/fi-rr-search.svg';
 import { ReactComponent as BellIcon } from '../../../assets/images/fi-rr-bell.svg';
 import { ReactComponent as ChatIcon } from '../../../assets/images/fi-rr-comment-alt.svg';
-import { ReactComponent as EnglishIcon } from '../../../assets/images/english.svg';
-import { ReactComponent as VietnamIcon } from '../../../assets/images/vietnam.svg';
-import { ReactComponent as KoreaIcon } from '../../../assets/images/korea.svg';
 
 function Header() {
   let { pathname } = useLocation();
@@ -63,9 +61,7 @@ function Header() {
             </Button>
           </HeaderMenuItem>
           <HeaderMenuItem>
-            <Button>
-              <EnglishIcon />
-            </Button>
+            <DropdownLocales />
           </HeaderMenuItem>
           <HeaderMenuItem>
             <Button>

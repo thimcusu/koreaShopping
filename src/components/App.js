@@ -6,7 +6,6 @@ import { ThemeProvider } from 'styled-components';
 import 'react-toastify/dist/ReactToastify.css';
 
 import AppRoutes from '../routes';
-import useFetchCurrentUser from '../api/useFetchCurrentUser';
 
 import { theme, GlobalStyle } from './globalStyles';
 

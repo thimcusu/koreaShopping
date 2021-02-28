@@ -7,6 +7,7 @@ import HomePage from '../components/home/HomePage';
 import Login from '../components/admin/Login';
 import ProtectedAdmin from '../guards/ProtectedAdmin';
 import Category from '../components/admin/Category';
+import Product from '../components/admin/Product';
 
 const routes = () => [
   { path: '/', element: <HomePage /> },
@@ -31,6 +32,13 @@ const routes = () => [
         path: 'categories',
         children: [
           { path: '/', element: <Category /> },
+          { path: ':id', element: <div>Category DETAILS</div> },
+        ],
+      },
+      {
+        path: 'products',
+        children: [
+          { path: '/', element: <Product /> },
           { path: ':id', element: <div>Category DETAILS</div> },
         ],
       },

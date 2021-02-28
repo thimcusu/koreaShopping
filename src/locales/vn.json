@@ -1,0 +1,19 @@
+{
+    "admin": {
+        "dashboard": "Trang chủ",
+        "import": "Nhập file",
+        "export": "Xuất file"
+    },
+    "product": "Sản phẩm",
+    "products": "Tất cả sản phẩm",
+    "category": "Loại sản phẩm",
+    "categories": "Tất cả loại sản phẩm",
+    "setting": "Cài đặt",
+    "all": "Tất cả",
+    "draft": "Sản phẩm mẫu",
+    "published": "Đang được bán",
+    "on_hold": "Sản phẩm lỗi",
+    "archived": "Lưu trữ",
+    "search_product": "Tìm kiếm sản phẩm",
+    "filter": "Lọc nhanh"
+}

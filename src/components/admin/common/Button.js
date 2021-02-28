@@ -33,9 +33,10 @@ const WrapperButton = styled.button`
   border-radius: 5px;
   padding: 0.65rem 1.1rem;
   transition: all 0.3s ease;
-  border: none;
   outline: 0;
   box-shadow: none;
+  border: ${(props) =>
+    props.border ? `1px solid ${props.theme.admin.lightText}` : 'none'};
   vertical-align: middle;
   cursor: pointer;
   text-align: center;

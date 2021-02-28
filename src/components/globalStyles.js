@@ -67,7 +67,7 @@ export const theme = {
   hover: '#E95A5A',
   light: '#A5A5A5',
   linkHeader: '#767676',
-  background: '#eef0f8',
+  background: '#F8F9FB',
   blue: '#007bff',
   indigo: '#6610f2',
   purple: '#6f42c1',

@@ -1,0 +1,19 @@
+{
+  "admin": {
+    "dashboard": "Dashboard",
+    "import": "Import",
+    "export": "Export"
+  },
+  "product": "Product{{sulfix}}",
+  "products": "Products",
+  "category": "Category",
+  "categories": "Category",
+  "setting": "Settings",
+  "draft": "Draft",
+  "published": "Published",
+  "on_hold": "On Hold",
+  "archived": "Archived",
+  "all": "All",
+  "search_product": "Search products",
+  "filter": "Filter"
+}

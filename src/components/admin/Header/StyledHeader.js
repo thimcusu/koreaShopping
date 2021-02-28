@@ -148,7 +148,7 @@ export const TopBar = styled.ul`
       }
     }
   }
-  li:last-child {
+  & > li:last-child {
     button {
       padding: 0.3rem 0.4rem;
       ${mixins.flex('row', 'center', 'center')};
@@ -201,5 +201,39 @@ export const HeaderMoblieButton = styled.button`
   }
   &:focus {
     outline: 0;
+  }
+`;
+
+// Dropdown Locales
+
+export const StyledDropdownLocales = styled.div`
+  position: relative;
+`;
+
+export const ContainerDropdownLocales = styled.ul`
+  position: absolute;
+  ${mixins.flex('column', 'flex-start', 'center')};
+  top: calc(100% + 5px);
+  right: 0;
+  background-color: #fff;
+  width: 140px;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 0 solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.42rem;
+  box-shadow: 0 0 50px 0 rgb(82 63 105 / 15%);
+`;
+
+export const DropdownLocalesItem = styled.li`
+  width: 100%;
+  button {
+    width: 100%;
+    text-align: left;
+    border-radius: 0;
+    svg {
+      margin-right: 1rem;
+    }
   }
 `;
