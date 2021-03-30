@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import { device } from '../constants/deviceSizes';
+import { HEIGHT_FOOTER } from '../constants/css';
 
 export const GlobalStyle = createGlobalStyle`
   *, *::before,
@@ -48,12 +49,20 @@ export const GlobalStyle = createGlobalStyle`
     font-family: "Poppins", Sans-Serif;
     font-weight: 400;
     .main-container {
+      position: relative;
       max-width: 1330px;
       margin: 0 auto;
       margin-top: 2rem;
+      background-color: inherit;
+      margin-bottom: ${HEIGHT_FOOTER};
     }
     .main-container td {
       padding-right: 20px;
+    }
+    .app{
+      position: relative;
+      z-index: 10;
+      background-color: #fff;
     }
   }
   a, a:hover, a:visited {

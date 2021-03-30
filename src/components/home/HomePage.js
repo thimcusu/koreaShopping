@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
-import Slider from "./Slider";
-import Adv from "./Adv";
-import Products from "./Products";
+import Slider from './Slider';
+import Adv from './Adv';
+import Products from './Products';
 const HomePage = () => {
   return (
-    <div className="main-container">
+    <div className="app">
       <Slider />
       <Adv />
       <Products />

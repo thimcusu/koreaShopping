@@ -8,4 +8,4 @@ export const PADDING_X_LEFT_CONTAINER_PAGE = '60px';
 export const PADDING_X_RIGHT_CONTAINER_PAGE = '130px';
 export const PADDING_X_LEFT_CONTAINER_PAGE_EXPAND = '90px';
 export const PADDING_X_RIGHT_CONTAINER_PAGE_EXPAND = '170px';
-
+export const HEIGHT_FOOTER = '270px';
