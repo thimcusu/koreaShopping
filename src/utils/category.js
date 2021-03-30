@@ -1,3 +1,8 @@
+export const pathCatToString = (path) => {
+  if (!path) return '';
+  return path.slice(1, -1).replace(/,/, '/');
+};
+
 export const categories = [
   { id: 1, name: 'Iphone', slug: 'iphone' },
   { id: 2, name: 'Headphone', slug: 'headphone' },

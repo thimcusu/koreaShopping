@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Button from '../common/Button';
+import Table from '../common/TableItems';
 import { ReactComponent as UploadIcon } from '../../../assets/images/fi-rr-upload.svg';
 import { ReactComponent as DownloadIcon } from '../../../assets/images/fi-rr-download.svg';
 import {} from './StyledProduct';
@@ -39,6 +40,7 @@ function ProductPage() {
 
       <ContainerPage>
         <SearchForm />
+        <Table></Table>
       </ContainerPage>
     </>
   );

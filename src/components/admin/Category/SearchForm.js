@@ -11,7 +11,7 @@ function SearchForm() {
   return (
     <FormSearchWrapper>
       <SearchBox
-        placeHoder={t('search_product')}
+        placeHoder={t('search_cat')}
         filterLabel={t('filter')}
       ></SearchBox>
     </FormSearchWrapper>

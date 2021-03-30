@@ -85,7 +85,14 @@ export const NavItem = styled.li`
     border-bottom: 2px solid ${(props) => props.theme.admin.primary};
   }
 `;
+
 // SEARCH BOX
+
+export const FormSearchWrapper = styled.div`
+  margin-bottom: 30px;
+  @media ${device.downLaptop} {
+  }
+`;
 
 export const SearchBar = styled.div`
   ${mixins.flex('row', 'flex-start', 'center')};

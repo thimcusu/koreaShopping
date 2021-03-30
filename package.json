@@ -27,6 +27,7 @@
     "D": "^1.0.0",
     "axios": "^0.21.0",
     "bootstrap": "4.5.3",
+    "dayjs": "^1.10.4",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-prettier": "^3.3.0",
     "history": "^5.0.0",

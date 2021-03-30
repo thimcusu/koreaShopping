@@ -1,16 +1,14 @@
-import React from 'react'
+import React from 'react';
+
 import { ContainerProducts, TitleProducts } from './StyledProducts';
+import RecProduct from './recProduct';
+
 function Products() {
-    return (
-        <div className="main-container">
-            <ContainerProducts>
-                <TitleProducts>
-                    <h3>Recommend Products</h3>
-                    <a>See more</a>
-                </TitleProducts>
-            </ContainerProducts>
-        </div>
-    )
+  return (
+    <div className="main-container">
+      <RecProduct />
+    </div>
+  );
 }
 
 export default Products;

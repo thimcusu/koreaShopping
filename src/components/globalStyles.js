@@ -50,7 +50,7 @@ export const GlobalStyle = createGlobalStyle`
     .main-container {
       max-width: 1330px;
       margin: 0 auto;
-      margin-top: 20px;
+      margin-top: 2rem;
     }
     .main-container td {
       padding-right: 20px;

@@ -15,5 +15,11 @@
     "on_hold": "Sản phẩm lỗi",
     "archived": "Lưu trữ",
     "search_product": "Tìm kiếm sản phẩm",
-    "filter": "Lọc nhanh"
+    "search_cat": "Tìm kiếm loại sản phẩm",
+    "filter": "Lọc nhanh",
+    "t_no": "STT",
+    "name": "Tên",
+    "hierachy": "Cấp bậc",
+    "create_at": "Ngày tạo",
+    "update_at": "Ngày chỉnh sửa"
 }
