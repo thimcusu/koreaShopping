@@ -1,5 +1,6 @@
-import { createGlobalStyle } from "styled-components";
-import { device } from "../contrants/deviceSizes";
+import { createGlobalStyle } from 'styled-components';
+import { device } from '../constants/deviceSizes';
+import { HEIGHT_FOOTER } from '../constants/css';
 
 export const GlobalStyle = createGlobalStyle`
   *, *::before,
@@ -44,9 +45,25 @@ export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0 auto;
     padding: 0;
-    background-color: ${props => props.theme.background};
+    background-color: ${(props) => props.theme.background};
     font-family: "Poppins", Sans-Serif;
     font-weight: 400;
+    .main-container {
+      position: relative;
+      max-width: 1330px;
+      margin: 0 auto;
+      margin-top: 2rem;
+      background-color: inherit;
+      margin-bottom: ${HEIGHT_FOOTER};
+    }
+    .main-container td {
+      padding-right: 20px;
+    }
+    .app{
+      position: relative;
+      z-index: 10;
+      background-color: #fff;
+    }
   }
   a, a:hover, a:visited {
     text-decoration: none;
@@ -55,9 +72,36 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const theme = {
-  primary: "#1B1B1B",
-  hover: "#E95A5A",
-  light: "#A5A5A5",
-  linkHeader: "#767676",
-  background: "#FFFFFF",
+  primary: '#1B1B1B',
+  hover: '#E95A5A',
+  light: '#A5A5A5',
+  linkHeader: '#767676',
+  background: '#F8F9FB',
+  blue: '#007bff',
+  indigo: '#6610f2',
+  purple: '#6f42c1',
+  pink: '#e83e8c',
+  red: '#dc3545',
+  orange: '#fd7e14',
+  yellow: '#ffc107',
+  green: '#28a745',
+  teal: '#20c997',
+  cyan: '#17a2b8',
+  white: '#ffffff',
+  gray: '#7E8299',
+  grayDark: '#3F4254',
+  success: '#1BC5BD',
+  info: '#8950FC',
+  warning: '#FFA800',
+  danger: '#F64E60',
+  light: '#F3F6F9',
+  dark: '#181C32',
+  admin: {
+    primary: '#02CB62',
+    //primary: '#3699FF',
+    // primary: '#8950FC',
+    secondary: '#E4E6EF',
+    grayText: '#6c7293',
+    lightText: '#b5b5c3',
+  },
 };

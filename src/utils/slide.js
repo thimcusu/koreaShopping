@@ -7,7 +7,7 @@ function importAll(r) {
 }
 
 export const source = importAll(
-  require.context("../images/homeSliders", false, /\.(png|jpe?g|svg)$/)
+  require.context("../assets/images/homeSliders", false, /\.(png|jpe?g|svg)$/)
 );
 
 const contentImages = [

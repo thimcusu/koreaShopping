@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
-import { NavLink } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { faTimes, faBars } from "@fortawesome/free-solid-svg-icons";
+import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faTimes, faBars } from '@fortawesome/free-solid-svg-icons';
 
 import {
   StyleHeader,
@@ -12,36 +12,37 @@ import {
   HeaderLogo,
   WrapperHeader,
   WrapperHeaderContent,
-} from "./StyleHeader";
-import iconCart from "../../../images/shopping.svg";
-import iconSearch from "../../../images/search.svg";
-import { categories } from "../../../utils/category";
+} from './StyleHeader';
+import NavLink from '../../common/NavLink';
+import iconCart from '../../../assets/images/shopping.svg';
+import iconSearch from '../../../assets/images/search.svg';
+import { categories } from '../../../utils/category';
 
-const Header = () => {
+const Header = ({ path }) => {
   const headerRef = useRef();
   const [isDropDown, setIsDropDown] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleResizeHeader);
+    window.addEventListener('scroll', handleResizeHeader);
     return () => {
-      window.removeEventListener("scroll", handleResizeHeader);
+      window.removeEventListener('scroll', handleResizeHeader);
     };
   }, []);
 
   const handleResizeHeader = () => {
     const winScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
-    if (winScroll > 100) headerRef.current.classList.add("scrolled");
-    else headerRef.current.classList.remove("scrolled");
+    if (winScroll > 100) headerRef.current.classList.add('scrolled');
+    else headerRef.current.classList.remove('scrolled');
   };
 
-  const toggleMenu = event => {
+  const toggleMenu = (event) => {
     event.preventDefault();
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const toggleDropDown = event => {
+  const toggleDropDown = (event) => {
     event.preventDefault();
     setIsDropDown(!isDropDown);
   };
@@ -53,7 +54,7 @@ const Header = () => {
           <HeaderLogo>
             <NavLink to="/">Sublime.</NavLink>
           </HeaderLogo>
-          <WrapperHeaderContent className={`${isMenuOpen ? "active" : ""}`}>
+          <WrapperHeaderContent className={`${isMenuOpen ? 'active' : ''}`}>
             <div className="menu_close" onClick={toggleMenu}>
               <FontAwesomeIcon icon={faTimes} />
             </div>
@@ -61,7 +62,7 @@ const Header = () => {
               <ul>
                 <li onClick={toggleDropDown}>
                   <NavLink to="/">Home</NavLink>
-                  <ul className={`${isDropDown ? "active" : ""}`}>
+                  <ul className={`${isDropDown ? 'active' : ''}`}>
                     <li>
                       <NavLink to={`/category`}>Categories</NavLink>
                     </li>
@@ -73,7 +74,7 @@ const Header = () => {
                     </li>
                   </ul>
                 </li>
-                {categories.map(category => (
+                {categories.map((category) => (
                   <li key={category.id}>
                     <NavLink to={`/category/${category.slug}`}>
                       {category.name}

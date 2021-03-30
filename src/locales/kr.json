@@ -1,0 +1,13 @@
+{
+    "admin": {
+        "dashboard": "Dashboard",
+        "import": "Import",
+        "export": "Export"
+    },
+    "product": "Product{{sulfix}}",
+    "products": "Products",
+    "category": "Category",
+    "categories": "Category",
+    "setting": "Settings",
+    "all": "All"
+}

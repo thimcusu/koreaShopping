@@ -4,25 +4,27 @@ import { NavLink } from "react-router-dom";
 import Slider from "react-slick";
 
 import {
-  Slide,
-  SlideBackground,
-  SlideContentContainer,
-  SlideContent,
-  CarouselSlider,
-  HomeSlider,
-  CustomDots,
+    Slide,
+    SlideBackground,
+    SlideContentContainer,
+    SlideContent,
+    CarouselSlider,
+    HomeSlider,
+    CustomDots,
 } from "./StyledSlider";
 import { LightButton } from "../../common/Button";
 
 function SlickCarousel({ slides = [], length }) {
     const settings = {
         dots: true,
+        appendDots: dots => <CustomDots><ul>{dots}</ul></CustomDots>,
+        customPaging: (i) => (<span>{`0${i + 1}`}</span>),
         arrows: false,
-        infinite: true,
+        // infinite: true,
         speed: 500,
         slidesToShow: 1,
         autoplaySpeed: 5000,
-        autoplay: true,
+        // autoplay: true,
         slidesToScroll: 1
     };
     return (
@@ -32,13 +34,13 @@ function SlickCarousel({ slides = [], length }) {
                     <img src={slide.src} />
                     <SlideContentContainer>
                         <SlideContent>
-                        <div className="content_container">
-                            <div className="title">{slide.title}</div>
-                            <div className="details">{slide.details}</div>
-                            <LightButton>
-                            <NavLink to="/">Shop Now</NavLink>
-                            </LightButton>
-                        </div>
+                            <div className="content_container">
+                                <div className="title">{slide.title}</div>
+                                <div className="details">{slide.details}</div>
+                                <LightButton>
+                                    <NavLink to="/">Shop Now</NavLink>
+                                </LightButton>
+                            </div>
                         </SlideContent>
                     </SlideContentContainer>
                 </Slide>
@@ -46,10 +48,10 @@ function SlickCarousel({ slides = [], length }) {
         </Slider>
     );
 }
-      
+
 SlickCarousel.propTypes = {
-  length: PropTypes.number,
-  slides: PropTypes.array,
+    length: PropTypes.number,
+    slides: PropTypes.array,
 };
 
 export default SlickCarousel;

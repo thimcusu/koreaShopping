@@ -1,9 +1,11 @@
 import styled, { keyframes } from "styled-components";
-import { device } from "../../../contrants/deviceSizes";
+import { device } from "../../../constants/deviceSizes";
 
 export const HomeSliderContainer = styled.div`
   width: 100%;
   height: 100%;
+  margin: 0 auto;
+  max-width: 1130px;
   padding-top: 70px;
   @media ${device.tablet} {
     padding-left: 30px;
@@ -26,7 +28,6 @@ export const HomeSliderContainer = styled.div`
 export const HomeSlider = styled.div`
   position: relative;
   width: 100%;
-  height: 80vh;
   color: #fff;
   overflow: hidden;
   transition: smooth;
@@ -83,8 +84,8 @@ export const Slide = styled.div`
   position: relative;
   width: 100%;
   img {
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: 80vh;
     object-fit: contain;
   }
 `;

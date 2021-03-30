@@ -1,9 +1,9 @@
-const webpack = require("webpack");
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require('webpack');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
-process.env.NODE_ENV = "development";
+process.env.NODE_ENV = 'development';
 const ASSET_PATH = process.env.ASSET_PATH || '/';
 const API_URL =
   (process.env.API_URL &&
@@ -23,7 +23,7 @@ module.exports = {
     hot: true,
     contentBase: './build',
     historyApiFallback: true,
-    headers: { "Access-Control-Allow-Origin": "*" },
+    headers: { 'Access-Control-Allow-Origin': '*' },
     port: 3000,
     watchOptions: {
       ignored: ['node_modules'],
@@ -34,11 +34,12 @@ module.exports = {
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
         API_URL: JSON.stringify(API_URL),
-      }
+        NODE_PATH: JSON.stringify('./src'),
+      },
     }),
     new HtmlWebpackPlugin({
-      template: "src/index.html",
-      favicon: "src/favicon.ico",
+      template: 'src/index.html',
+      favicon: 'src/favicon.ico',
     }),
     new ReactRefreshWebpackPlugin(),
   ].filter(Boolean),
@@ -52,35 +53,27 @@ module.exports = {
             loader: 'babel-loader',
             options: {
               presets: ['@babel/preset-react'],
-              plugins: [ require.resolve('react-refresh/babel')].filter(Boolean),
+              plugins: [require.resolve('react-refresh/babel')].filter(Boolean),
             },
           },
         ],
       },
       {
         test: /(\.css)$/,
-        use: ["style-loader", "css-loader?url=false"],
+        use: ['style-loader', 'css-loader?url=false'],
       },
       {
-        test: /\.(svg)$/i,
+        test: /\.svg$/,
+        use: ['@svgr/webpack', 'url-loader'],
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif)$/i,
         use: [
           {
             loader: 'url-loader',
             options: {
               limit: 8192, // 8*1024
               name: 'static/assets/[name].[hash:8].[ext]',
-            },
-          },
-        ],
-      },
-      {
-        test: /\.(png|jpg|gif)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              outputPath: 'static/assets/',
-              name: 'static/assets/[name].[ext]',
             },
           },
         ],

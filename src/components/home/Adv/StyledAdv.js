@@ -1,18 +1,18 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import { device } from "../../../contrants/deviceSizes";
+import { device } from '../../../constants/deviceSizes';
 
 export const StyledAdv = styled.div`
   padding-top: 0;
   padding-left: 15px;
   padding-right: 15px;
+  height: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
   & > div {
     position: relative;
-    height: 75vh;
     width: 100%;
   }
   @media ${device.mobileL} {
@@ -29,6 +29,8 @@ export const AdvSmall = styled.div`
   margin-top: 0;
   @media ${device.mobileL} {
     margin-top: 30px;
+    height: 490px;
+    width: 100%;
   }
   @media ${device.laptop} {
     width: calc((100% * 0.4) - 15px) !important;
@@ -37,6 +39,11 @@ export const AdvSmall = styled.div`
 export const AdvLarge = styled.div`
   padding: 30px;
   margin-top: 30px;
+  @media ${device.mobileL} {
+    margin-top: 30px;
+    height: 490px;
+    width: 100%;
+  }
   @media ${device.laptop} {
     width: calc((100% * 0.6) - 15px) !important;
     /* margin-top: 0; */
@@ -44,7 +51,7 @@ export const AdvLarge = styled.div`
 `;
 export const AdvBackGround = styled.div`
   position: absolute;
-  background-image: url(${props => props.src});
+  background-image: url(${(props) => props.src});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -55,17 +62,17 @@ export const AdvBackGround = styled.div`
 `;
 export const AdvSmallInner = styled.div`
   position: relative;
-  border: solid 2px ${props => props.theme.background};
+  border: solid 2px ${(props) => props.theme.background};
   width: 100%;
   padding-top: 50px;
   padding-left: 30px;
   height: 100%;
-  color: ${props => props.theme.background};
+  color: ${(props) => props.theme.background};
 `;
 export const AdvLargeInner = styled.div`
   position: relative;
   background: rgba(0, 0, 0, 0.63);
-  color: ${props => props.theme.background};
+  color: ${(props) => props.theme.background};
   width: 100%;
   height: 100%;
   padding-top: 50px;
@@ -103,7 +110,7 @@ export const Link = styled.div`
     width: 100%;
     height: 1px;
     background: #ffffff;
-    content: "";
+    content: '';
   }
   margin-top: 20px;
   padding-left: 4px;

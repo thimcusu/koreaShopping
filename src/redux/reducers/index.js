@@ -1,12 +1,22 @@
-import { combineReducers } from "redux";
-import courses from "./reducerCourse";
-import authors from "./reducerAuthor";
-import apiCallStatus from "./reducerApiStatus";
+import { combineReducers } from 'redux';
+import users from './reducerUser';
+import apiCallStatus from './reducerApiStatus';
+import currentUser from './loginReducer';
+import { toggledSidebar, toggledTopbar, toggledMenu } from './utilsReducer';
+import { LOGOUT } from '../../constants/actionType';
 
-const rootReducer = combineReducers({
-  courses,
-  authors,
+const appReducer = combineReducers({
+  users,
   apiCallStatus,
+  currentUser,
+  toggledSidebar,
+  toggledTopbar,
+  toggledMenu,
 });
+
+const rootReducer = (state, action) => {
+  if (action.type === LOGOUT) state = undefined;
+  return appReducer(state, action);
+};
 
 export default rootReducer;
